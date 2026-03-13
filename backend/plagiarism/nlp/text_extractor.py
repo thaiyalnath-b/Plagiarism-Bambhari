@@ -235,9 +235,9 @@ import os
 import pdfplumber
 import docx
 
-# ======================================
+# ====
 # MAIN ENTRY
-# ======================================
+# ====
 def extract_text(file_path):
     """
     Extract text from various file types
@@ -261,9 +261,9 @@ def extract_text(file_path):
     return ""
 
 
-# ======================================
+# ====
 # EXTRACT FROM TXT
-# ======================================
+# ====
 def extract_txt(file_path):
     """Extract text from TXT file"""
     try:
@@ -276,9 +276,9 @@ def extract_txt(file_path):
         return ""
 
 
-# ======================================
+# ====
 # EXTRACT FROM DOCX
-# ======================================
+# ====
 def extract_docx(file_path):
     """Extract text from DOCX file"""
     try:
@@ -291,9 +291,9 @@ def extract_docx(file_path):
         return ""
 
 
-# ======================================
+# ====
 # FAST PDF EXTRACTION (RENDER SAFE)
-# ======================================
+# ====
 def extract_pdf_fast(file_path):
     """
     Extract text from PDF file
@@ -356,9 +356,9 @@ def extract_pdf_fast(file_path):
     return text
 
 
-# ======================================
+# ====
 # EXTRACT FROM UPLOADED FILE (DIRECT)
-# ======================================
+# ====
 def extract_from_uploaded_file(uploaded_file):
     """
     Extract text directly from an uploaded file object
@@ -388,9 +388,9 @@ def extract_from_uploaded_file(uploaded_file):
 # import os
 
 
-# # ======================================
+# # ====
 # # MAIN ENTRY
-# # ======================================
+# # ====
 # def extract_text(file_path):
 
 #     if not os.path.exists(file_path):
@@ -411,9 +411,9 @@ def extract_from_uploaded_file(uploaded_file):
 #     return ""
 
 
-# # ======================================
+# # ====
 # # FAST PDF EXTRACTION (NO OCR)
-# # ======================================
+# # ====
 # def extract_pdf_text(file_path):
 
 #     text = ""
@@ -453,9 +453,9 @@ def extract_from_uploaded_file(uploaded_file):
 #     return text[:8000]
 
 
-# # ======================================
+# # ====
 # # DOCX
-# # ======================================
+# # ====
 # def extract_docx_text(file_path):
 
 #     try:
@@ -467,9 +467,9 @@ def extract_from_uploaded_file(uploaded_file):
 #         return ""
 
 
-# # ======================================
+# # ====
 # # TXT
-# # ======================================
+# # ====
 # def extract_txt_text(file_path):
 
 #     try:

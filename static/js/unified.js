@@ -1,4 +1,4 @@
-// ================= STORAGE MANAGER =================
+// STORAGE MANAGER 
 class StorageManager {
     constructor() {
         this.storageKey = 'bri_ai_user_data';
@@ -183,7 +183,7 @@ class StorageManager {
     }
 }
 
-// ================= GLOBAL STATE =================
+// GLOBAL STATE 
 const AppState = {
     analyses: [],
     results: [],
@@ -215,7 +215,7 @@ const AppState = {
 
 const storageManager = new StorageManager();
 
-// ================= SECTION MANAGER =================
+//  SECTION MANAGER 
 class SectionManager {
     constructor() {
         this.sections = document.querySelectorAll('.content-section');
@@ -270,7 +270,7 @@ class SectionManager {
     }
 }
 
-// ================= RESULTS SECTION =================
+// RESULTS SECTION 
 class ResultsSection {
     constructor() {
         this.container = document.getElementById('results-container');
@@ -430,7 +430,7 @@ class ResultsSection {
     }
 }
 
-// ================= REPORTS SECTION =================
+// REPORTS SECTION
 class ReportsSection {
     constructor() {
         this.container = document.getElementById('reports-container');
@@ -517,7 +517,7 @@ class ReportsSection {
     }
 }
 
-// ================= CITATIONS SECTION =================
+// CITATIONS SECTION 
 class CitationsSection {
     constructor() {
         this.container = document.getElementById('citations-container');
@@ -616,7 +616,7 @@ class CitationsSection {
     }
 }
 
-// ================= SIMILARITY SECTION =================
+// SIMILARITY SECTION 
 class SimilaritySection {
     constructor() {
         this.container = document.getElementById('similarity-container');
@@ -697,7 +697,7 @@ class SimilaritySection {
     }
 }
 
-// ================= HISTORY SECTION =================
+// HISTORY SECTION 
 class HistorySection {
     constructor() {
         this.container = document.getElementById('history-container');
@@ -830,7 +830,7 @@ class HistorySection {
     }
 }
 
-// ================= COPYRIGHT SECTION =================
+// COPYRIGHT SECTION
 class CopyrightSection {
     constructor() {
         this.container = document.getElementById('copyright-container');
@@ -929,7 +929,7 @@ class CopyrightSection {
     }
 }
 
-// ================= SETTINGS SECTION =================
+// SETTINGS SECTION
 class SettingsSection {
     constructor() {
         this.container = document.getElementById('settings-container');
@@ -1043,7 +1043,7 @@ class SettingsSection {
     }
 }
 
-// ================= UPLOAD HANDLER =================
+// UPLOAD HANDLER 
 class UploadHandler {
     constructor() {
         this.fileInput = document.getElementById('fileInput');
@@ -1308,7 +1308,7 @@ class UploadHandler {
     }
 }
 
-// ================= INITIALIZATION =================
+// INITIALIZATION 
 document.addEventListener('DOMContentLoaded', function () {
     window.resultsSection = new ResultsSection();
     window.reportsSection = new ReportsSection();

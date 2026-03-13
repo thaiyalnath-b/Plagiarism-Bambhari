@@ -19,9 +19,9 @@ from .nlp.highlighter import highlight_matches
 from .nlp.global_checker import global_plagiarism_check
 
 
-# ======================================================
+# ===
 # SCORE → VERDICT
-# ======================================================
+# ===
 def verdict_from_score(score):
     if score < 15:
         return "Original"
@@ -31,9 +31,9 @@ def verdict_from_score(score):
         return "Plagiarized"
 
 
-# ======================================================
+# ===
 # FILE UPLOAD ANALYSIS
-# ======================================================
+# ===
 @csrf_exempt
 def upload_document(request):
     print("="*80)
@@ -136,9 +136,9 @@ def upload_document(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # TEXT ANALYSIS (PASTE TEXT)
-# ======================================================
+# ===
 @csrf_exempt
 def analyze_text(request):
     """API endpoint to analyze pasted text"""
@@ -184,9 +184,9 @@ def analyze_text(request):
         return JsonResponse({'error': str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET RECENT RESULTS
-# ======================================================
+# ===
 @login_required
 def recent_results(request):
     """Get recent analysis results for the current user"""
@@ -222,9 +222,9 @@ def recent_results(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET USER REPORTS
-# ======================================================
+# ===
 @login_required
 def user_reports(request):
     """Get all reports for the current user"""
@@ -248,9 +248,9 @@ def user_reports(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET CITATIONS
-# ======================================================
+# ===
 @login_required
 def get_citations(request):
     """Get citation analysis"""
@@ -291,9 +291,9 @@ def get_citations(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET SIMILARITY DATA
-# ======================================================
+# ===
 @login_required
 def similarity_data(request):
     """Get similarity analysis data"""
@@ -345,9 +345,9 @@ def similarity_data(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET USER HISTORY
-# ======================================================
+# ===
 @login_required
 def user_history(request):
     """Get user's analysis history"""
@@ -371,9 +371,9 @@ def user_history(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET COPYRIGHT DATA
-# ======================================================
+# ===
 @login_required
 def copyright_data(request):
     """Get copyright analysis data"""
@@ -413,9 +413,9 @@ def copyright_data(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET USER SETTINGS
-# ======================================================
+# ===
 @login_required
 def user_settings(request):
     """Get user settings"""
@@ -434,9 +434,9 @@ def user_settings(request):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # GET RESULT DETAILS
-# ======================================================
+# ===
 @login_required
 def result_details(request, result_id):
     """Get detailed information about a specific result"""
@@ -466,9 +466,9 @@ def result_details(request, result_id):
         return JsonResponse({"error": str(e)}, status=500)
 
 
-# ======================================================
+# ===
 # DOWNLOAD REPORT
-# ======================================================
+# ===
 @login_required
 def download_report(request, report_id):
     """Download a report as text file"""
@@ -514,9 +514,9 @@ End of Report
         return HttpResponse(f"Error: {str(e)}", status=500)
 
 
-# ======================================================
+# ===
 # SYNC USER DATA
-# ======================================================
+# ===
 @login_required
 @csrf_exempt
 def sync_user_data(request):

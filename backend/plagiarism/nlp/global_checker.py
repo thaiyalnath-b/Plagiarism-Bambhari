@@ -3,18 +3,18 @@
 # from sklearn.feature_extraction.text import TfidfVectorizer
 # from sklearn.metrics.pairwise import cosine_similarity
 
-# # =====================================================
+# # ==
 # # GOOGLE CONFIG
-# # =====================================================
+# # ==
 
 # GOOGLE_API_KEY = "AIzaSyAnL8xfNRPxr0Rf8CWwyQQ5X3uZ_yylPiI"
 # GOOGLE_CX = "b173eaadf448c4983"
 
 
 
-# # =====================================================
+# # ==
 # # GOOGLE SEARCH (FAST MODE)
-# # =====================================================
+# # ==
 
 # def search_google(query):
 #     url = "https://www.googleapis.com/customsearch/v1"
@@ -39,9 +39,9 @@
 #         return []
 
 
-# # =====================================================
+# # ==
 # # WEBSITE CONTENT EXTRACTION (FAST SAFE)
-# # =====================================================
+# # ==
 
 # def extract_website_content(url):
 
@@ -77,9 +77,9 @@
 #         return "", "", ""
 
 
-# # =====================================================
+# # ==
 # # FAST SIMILARITY
-# # =====================================================
+# # ==
 
 # vectorizer = TfidfVectorizer(stop_words="english")
 
@@ -92,9 +92,9 @@
 #         return 0.0
 
 
-# # =====================================================
+# # ==
 # # GLOBAL PLAGIARISM CHECK (OPTIMIZED)
-# # =====================================================
+# # ==
 
 # def global_plagiarism_check(uploaded_text):
 
@@ -156,15 +156,15 @@ from bs4 import BeautifulSoup
 import re
 from rapidfuzz import fuzz
 
-# =====================================
+# ===
 # TAVILY CONFIG (YOUR KEYS)
-# =====================================
+# ===
 TAVILY_API_KEY = "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"
 TAVILY_SEARCH_URL = "https://api.tavily.com/search"
 
-# =====================================
+# ===
 # TAVILY SEARCH
-# =====================================
+# ===
 def search_tavily(query, num=3):
     """Search using Tavily API"""
     headers = {
@@ -200,9 +200,9 @@ def search_tavily(query, num=3):
         print(f"Tavily search error: {e}")
         return []
 
-# =====================================
+# ===
 # FETCH PAGE CONTENT
-# =====================================
+# ===
 def fetch_page_content(url):
     """Fetch and parse webpage content"""
     try:
@@ -242,9 +242,9 @@ def fetch_page_content(url):
         print(f"Error fetching {url}: {e}")
         return None
 
-# =====================================
+# ===
 # CALCULATE BREAKDOWN FROM SOURCES
-# =====================================
+# ===
 def calculate_breakdown(plagiarism_score, sources):
     """
     Calculate the breakdown of identical, minor, paraphrased matches
@@ -326,9 +326,9 @@ def calculate_breakdown(plagiarism_score, sources):
         'unique': max(0, unique)
     }
 
-# =====================================
+# ===
 # GLOBAL PLAGIARISM CHECK
-# =====================================
+# ===
 def global_plagiarism_check(uploaded_text):
     """Main global plagiarism check function"""
     print("🌍 Running global plagiarism check with Tavily...")

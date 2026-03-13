@@ -2,9 +2,9 @@ from django.contrib.auth.models import AbstractUser, BaseUserManager
 from django.db import models
 
 
-# ==========================================
+# ========
 # CUSTOM USER MANAGER
-# ==========================================
+# ========
 class UserManager(BaseUserManager):
 
     def create_user(self, email, password=None, **extra_fields):
@@ -35,9 +35,9 @@ class UserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
-# ==========================================
+# ========
 # USER MODEL (Simplified - No Role)
-# ==========================================
+# ========
 class User(AbstractUser):
 
     # login fields

@@ -29,13 +29,13 @@ class Command(BaseCommand):
             name="Google OAuth",
             defaults={
                 "client_id": config("GOOGLE_CLIENT_ID"),
-                "secret": config("GOOGLE_SECRET"),
+                "secret": config("GOOGLE_CLIENT_SECRET"),
             },
         )
 
        
         app.client_id = config("GOOGLE_CLIENT_ID")
-        app.secret = ("GOOGLE_SECRET")
+        app.secret = config("GOOGLE_CLIENT_SECRET")
         app.save()
 
         

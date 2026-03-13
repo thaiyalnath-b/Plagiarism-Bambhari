@@ -1,6 +1,6 @@
-============================================================
+=========
                  PLAGIARISM DETECTION REPORT
-============================================================
+=========
 
 Generated: 3/10/2026, 11:43:49 AM
 Document: Text Analysis
@@ -32,6 +32,6 @@ MATCHING SOURCES:
    Similarity: 41.02564102564102%
    URL: https://play.google.com/store/apps/details?id=com.progaonline.antiplagiat&hl=ta
 
-============================================================
+=========
               END OF REPORT
-============================================================
+=========

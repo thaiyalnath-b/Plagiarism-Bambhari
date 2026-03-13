@@ -1,6 +1,6 @@
-============================================================
+=========
                  PLAGIARISM DETECTION REPORT
-============================================================
+=========
 
 Generated: 3/10/2026, 11:21:29 AM
 Document: Advanced JAVA Programming-LAB_removed.pdf.pdf
@@ -37,6 +37,6 @@ MATCHING SOURCES:
    Similarity: 38.18181818181819%
    URL: https://stackoverflow.com/questions/59097672/how-to-print-out-variable-values-in-servlets-on-html-pages
 
-============================================================
+=========
               END OF REPORT
-============================================================
+=========

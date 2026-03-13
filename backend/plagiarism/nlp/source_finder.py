@@ -5,9 +5,9 @@
 # from rapidfuzz import fuzz
 # import re
 
-# # =====================================
+# # ===
 # # GOOGLE CUSTOM SEARCH CONFIG
-# # =====================================
+# # ===
 
 # GOOGLE_SEARCH_API = "https://www.googleapis.com/customsearch/v1"
 
@@ -16,18 +16,18 @@
 # CX_ID = "b173eaadf448c4983"
 
 
-# # =====================================
+# # ===
 # # CLEAN TEXT (FAST)
-# # =====================================
+# # ===
 # def clean_text(text):
 #     text = re.sub(r"\s+", " ", text)
 #     return text.strip()
 
 
-# # =====================================
+# # ===
 # # SPLIT INTO SEARCHABLE SENTENCES
 # # (important for speed)
-# # =====================================
+# # ===
 # def get_search_chunks(text, max_chunks=5):
 #     sentences = re.split(r"[.!?]", text)
 
@@ -40,9 +40,9 @@
 #     return cleaned[:max_chunks]
 
 
-# # =====================================
+# # ===
 # # GOOGLE SEARCH
-# # =====================================
+# # ===
 # def google_search(query):
 #     params = {
 #         "key": API_KEY,
@@ -59,9 +59,9 @@
 #         return []
 
 
-# # =====================================
+# # ===
 # # EXTRACT PAGE CONTENT
-# # =====================================
+# # ===
 # def fetch_page_text(url):
 #     try:
 #         headers = {
@@ -80,7 +80,7 @@
 #         return ""
 
 
-# # =====================================
+# # ===
 # #
 
 # plagiarism/nlp/source_finder.py
@@ -90,9 +90,9 @@
 # from rapidfuzz import fuzz
 # import re
 
-# # =====================================
+# # ===
 # # GOOGLE CUSTOM SEARCH CONFIG
-# # =====================================
+# # ===
 
 # GOOGLE_SEARCH_API = "https://www.googleapis.com/customsearch/v1"
 
@@ -100,17 +100,17 @@
 # CX_ID = "b173eaadf448c4983"
 
 
-# # =====================================
+# # ===
 # # CLEAN TEXT
-# # =====================================
+# # ===
 # def clean_text(text):
 #     text = re.sub(r"\s+", " ", text)
 #     return text.strip()
 
 
-# # =====================================
+# # ===
 # # SPLIT TEXT INTO SEARCHABLE CHUNKS
-# # =====================================
+# # ===
 # def get_search_chunks(text, max_chunks=5):
 #     sentences = re.split(r"[.!?]", text)
 
@@ -126,9 +126,9 @@
 
 #     return valid[:max_chunks]
 
-# # =====================================
+# # ===
 # # GOOGLE SEARCH
-# # =====================================
+# # ===
 # def google_search(query):
 
 #     params = {
@@ -150,9 +150,9 @@
 #         return []
 
 
-# # =====================================
+# # ===
 # # FETCH WEBPAGE TEXT
-# # =====================================
+# # ===
 # def fetch_page_text(url):
 
 #     try:
@@ -170,9 +170,9 @@
 #         return ""
 
 
-# # =====================================
+# # ===
 # # AUTHOR EXTRACTION
-# # =====================================
+# # ===
 # def extract_author(page_text):
 
 #     patterns = [
@@ -188,9 +188,9 @@
 #     return "Unknown"
 
 
-# # =====================================
+# # ===
 # # MAIN SOURCE FINDER
-# # =====================================
+# # ===
 # def search_sources(text):
 #     # print("Searching Google for", query)
 
@@ -247,32 +247,32 @@ from rapidfuzz import fuzz
 import re
 import sys
 
-# =====================================
+# ===
 # FORCE PRINT TO FLUSH IMMEDIATELY
-# =====================================
+# ===
 def log_print(*args, **kwargs):
     """Force print to appear immediately"""
     print(*args, **kwargs)
     sys.stdout.flush()
 
-# =====================================
+# ===
 # TAVILY API CONFIG
-# =====================================
+# ===
 TAVILY_API_KEY = "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"
 TAVILY_SEARCH_URL = "https://api.tavily.com/search"
 
-# =====================================
+# ===
 # CLEAN TEXT
-# =====================================
+# ===
 def clean_text(text):
     if not text:
         return ""
     text = re.sub(r"\s+", " ", text)
     return text.strip()
 
-# =====================================
+# ===
 # EXTRACT AUTHOR FROM PAGE
-# =====================================
+# ===
 def extract_author(soup):
     """Extract author information from webpage"""
     meta_author = soup.find("meta", {"name": "author"})
@@ -289,9 +289,9 @@ def extract_author(soup):
     
     return "Unknown"
 
-# =====================================
+# ===
 # EXTRACT TITLE FROM PAGE
-# =====================================
+# ===
 def extract_title(soup):
     """Extract page title"""
     if soup.title and soup.title.string:
@@ -307,9 +307,9 @@ def extract_title(soup):
     
     return "Unknown Source"
 
-# =====================================
+# ===
 # FETCH PAGE CONTENT
-# =====================================
+# ===
 def fetch_page_content(url, timeout=5):
     """Fetch and parse webpage content"""
     try:
@@ -344,9 +344,9 @@ def fetch_page_content(url, timeout=5):
         log_print(f"  ⚠️ Error fetching {url[:50]}...: {str(e)[:50]}")
         return None
 
-# =====================================
+# ===
 # TAVILY SEARCH
-# =====================================
+# ===
 def tavily_search(query, num_results=3):
     """Search using Tavily API"""
     log_print(f"   Tavily search: {query[:80]}...")
@@ -392,9 +392,9 @@ def tavily_search(query, num_results=3):
         log_print(f"   Tavily search error: {str(e)[:100]}")
         return []
 
-# =====================================
+# ===
 # GET SEARCH QUERIES FROM TEXT
-# =====================================
+# ===
 def get_search_queries(text, max_queries=3):
     """Extract meaningful search queries from text"""
     sentences = re.split(r'[.!?]+', text)
@@ -425,9 +425,9 @@ def get_search_queries(text, max_queries=3):
     
     return queries
 
-# =====================================
+# ===
 # CALCULATE SIMILARITY
-# =====================================
+# ===
 def calculate_similarity(text1, text2):
     """Calculate similarity between two texts using fuzzy matching"""
     if not text1 or not text2:
@@ -440,9 +440,9 @@ def calculate_similarity(text1, text2):
     
     return similarity
 
-# =====================================
+# ===
 # MAIN SOURCE FINDER
-# =====================================
+# ===
 def search_sources(text):
     """
     Main function to search for sources globally using Tavily API

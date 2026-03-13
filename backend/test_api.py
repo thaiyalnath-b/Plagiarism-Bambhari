@@ -9,14 +9,14 @@ import os
 import requests
 import json
 
-# =====================================
+# ===
 # Add backend to Python path so we can import Django settings
-# =====================================
+# ===
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'backend'))
 
-# =====================================
+# ===
 # YOUR GOOGLE API CREDENTIALS
-# =====================================
+# ===
 API_KEY = "AIzaSyAN2q0ZQe1uB1sGwSMXtchoGtnjSPAiwZw"
 CX_ID = "b173eaadf448c4983"
 SEARCH_API = "https://www.googleapis.com/customsearch/v1"

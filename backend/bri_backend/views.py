@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 
-# ==============================
+# =============
 # PUBLIC LANDING PAGES (No login required)
-# ==============================
+# =============
 
 def public_home(request):
     """Main landing page with AI features"""
@@ -33,9 +33,9 @@ def contact_page(request):
     """Contact section - uses same landing page with anchor"""
     return render(request, "home_public.html")
 
-# ==============================
+# =============
 # AUTHENTICATION PAGES (Public)
-# ==============================
+# =============
 
 def signup_page(request):
     """Signup page"""
@@ -45,9 +45,9 @@ def forgot_password(request):
     """Forgot password page"""
     return render(request, "forgot_password.html")
 
-# ==============================
+# =============
 # PROTECTED ANALYSIS PAGE (Login required)
-# ==============================
+# =============
 
 @login_required(login_url='/login/')
 def unified_dashboard(request):

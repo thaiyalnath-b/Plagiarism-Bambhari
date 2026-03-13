@@ -4,7 +4,7 @@ body {
   margin-top: -120px !important;
 }
 
-/* ================= GLOBAL LAYOUT ================= */
+/*  GLOBAL LAYOUT  */
 
 .layout {
   display: flex;
@@ -18,7 +18,7 @@ body {
 }
 
 
-/* ================= SIDEBAR ================= */
+/*  SIDEBAR  */
 .sidebar {
   width: 260px;
   background: white;
@@ -114,7 +114,7 @@ body {
   }
 }
 
-/* ================= HERO SECTION ================= */
+/*  HERO SECTION  */
 
 .hero-section {
   max-width: 1150px;
@@ -420,7 +420,7 @@ body {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -449,7 +449,7 @@ body {
 }
 
 
-/* ================= PLATFORM TEMPLATE ================= */
+/*  PLATFORM TEMPLATE  */
 
 .page-header {
   text-align: center;
@@ -584,7 +584,7 @@ body {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -602,7 +602,7 @@ body {
 
 }
 
-/* ================= FEATURES ================= */
+/*  FEATURES  */
 
 
 .page-header {
@@ -714,7 +714,7 @@ body {
 }
 
 
-/* ================= ABOUT SECTION ================= */
+/*  ABOUT SECTION  */
 .about-section {
   max-width: 1200px;
   margin: auto;
@@ -895,7 +895,7 @@ body {
   line-height: 1.6;
 }
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -915,7 +915,7 @@ body {
 
 
 
-/* ================= TEAM ================= */
+/*  TEAM  */
 
 .team-grid {
   display: grid;
@@ -936,7 +936,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* ================= PRICING SECTION ================= */
+/*  PRICING SECTION  */
 
 .pricing-section {
   max-width: 1150px;
@@ -1066,7 +1066,7 @@ body {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -1076,7 +1076,7 @@ body {
 
 }
 
-/* ================= RESOURCES SECTION ================= */
+/*  RESOURCES SECTION  */
 
 .resources-section {
   max-width: 1150px;
@@ -1156,7 +1156,7 @@ body {
 }
 
 
-/* ================= CONTACT SECTION ================= */
+/*  CONTACT SECTION  */
 .contact-section {
   max-width: 1100px;
   margin: auto;
@@ -1269,7 +1269,7 @@ body {
   background: #000;
 }
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -1282,7 +1282,7 @@ body {
 
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:1000px) {
 
@@ -1305,7 +1305,7 @@ body {
 }
 
 
-/* ================= OVERVIEW SECTION ================= */
+/*  OVERVIEW SECTION  */
 
 .overview-section {
   max-width: 1200px;
@@ -1406,7 +1406,7 @@ body {
 
 }
 
-/* ================= PLAGIARISM SECTION ================= */
+/*  PLAGIARISM SECTION  */
 
 .plagiarism-deep-section {
   max-width: 1150px;
@@ -1541,7 +1541,7 @@ body {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -1557,7 +1557,7 @@ body {
 
 
 
-/* ================= TECHNOLOGY SECTION ================= */
+/*  TECHNOLOGY SECTION  */
 
 .technology-deep-section {
   max-width: 1150px;
@@ -1692,7 +1692,7 @@ body {
 }
 
 
-/* ================= RESPONSIVE ================= */
+/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
