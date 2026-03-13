@@ -1,6 +1,5 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  // ELEMENTS 
   const file = document.getElementById("fileInput");
   const text = document.getElementById("textInput");
   const upload = document.getElementById("uploadBtn");
@@ -31,7 +30,6 @@ document.addEventListener("DOMContentLoaded", () => {
   let pulseTimer = null;
   let particles = [];
 
-  // PARTICLE BACKGROUND
   function createParticles() {
     const container = document.createElement('div');
     container.className = 'particles';
@@ -50,7 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   createParticles();
 
-  // DRAG & DROP 
   if (uploadBox) {
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
       uploadBox.addEventListener(eventName, preventDefaults, false);
@@ -82,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // AI LOADING 
+  // AI Loading
   function start(btn) {
     if (!btn) return;
 
@@ -102,14 +99,12 @@ document.addEventListener("DOMContentLoaded", () => {
       score.textContent = '0';
     }
 
-    // Animate progress steps
     progressSteps.forEach((step, index) => {
       setTimeout(() => {
         step.classList.add('active');
       }, index * 500);
     });
 
-    // Animate breakdown items
     breakdownEls.forEach((el, index) => {
       setTimeout(() => {
         el.classList.add("active");
@@ -135,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
     verdict?.classList.remove("pulse");
     loader?.classList.add("hidden");
 
-    // Complete progress steps
     progressSteps.forEach(step => {
       step.classList.remove('active');
       step.classList.add('completed');
@@ -144,29 +138,21 @@ document.addEventListener("DOMContentLoaded", () => {
     clearInterval(pulseTimer);
   }
 
-  // SCORE RING
   function circle(v) {
     if (!ring || !score) return;
-
-    // Ensure v is a number between 0 and 100
     const percentage = Math.min(100, Math.max(0, Math.round(v || 0)));
-    
-    // Calculate circumference (2 * π * radius)
+
     const radius = 60;
     const circumference = 2 * Math.PI * radius;
-    
-    // Calculate offset based on percentage
+
     const offset = circumference - (percentage / 100) * circumference;
-    
-    // Apply styles
+
     ring.style.transition = 'stroke-dashoffset 1.5s ease';
     ring.style.strokeDasharray = circumference;
     ring.style.strokeDashoffset = offset;
-    
-    // Set score text - just the percentage, no large numbers
+
     score.textContent = percentage;
-    
-    // Update verdict class based on percentage
+
     if (verdict) {
       verdict.className = 'verdict-pill';
       if (percentage < 15) {
@@ -182,9 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // CREATE BREAKDOWN 
+  // Create Breakdown
   function createBreakdownFromScore(score) {
-    // Ensure score is between 0-100
     const s = Math.min(100, Math.max(0, score));
     
     return {
@@ -195,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
-  // PIE CHART 
+  // Pie chart 
   function pieDraw(breakdown) {
     if (!ctx) return;
 
@@ -244,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ctx.fill();
   }
 
-  // MATCHES DISPLAY 
+  // Matches Display 
   function renderMatches(sources) {
     if (!matchesBox) return;
 
@@ -271,7 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // HIGHLIGHTS DISPLAY
+  // Highlights display
   function renderHighlights(items) {
     if (!highlightBox) return;
 
@@ -292,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // CSRF TOKEN 
+  // CSRF Token
   function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -308,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return cookieValue;
   }
 
-  // API CALL 
+  // API Call 
   async function send(url, fd) {
     const csrftoken = getCookie('csrftoken');
 
@@ -326,7 +311,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return d;
   }
 
-  //  FILE UPLOAD 
+  //  FILE upload
   upload?.addEventListener("click", async () => {
     if (!file.files.length) {
       status.textContent = " Please select a file";
@@ -344,12 +329,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const d = await send("/api/upload/", fd);
       
-      // Ensure percentage is between 0-100
       const scoreVal = Math.min(100, Math.max(0, Math.round(d.plagiarism_percentage || 0)));
 
       circle(scoreVal);
-      
-      // Set verdict
+
       verdict.textContent = d.verdict || "";
       
       const breakdown = d.breakdown || createBreakdownFromScore(scoreVal);
@@ -370,7 +353,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //  TEXT ANALYSIS 
+  //  TEXT Analysis
   analyze?.addEventListener("click", async () => {
     if (!text.value || text.value.length < 50) {
       status.textContent = " Please enter at least 50 characters";
@@ -388,12 +371,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const d = await send("/api/analyze-text/", fd);
       
-      // Ensure percentage is between 0-100
       const scoreVal = Math.min(100, Math.max(0, Math.round(d.plagiarism_percentage || 0)));
 
       circle(scoreVal);
-      
-      // Set verdict
       verdict.textContent = d.verdict || "";
 
       const breakdown = d.breakdown || createBreakdownFromScore(scoreVal);
@@ -414,7 +394,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //  FILE INPUT CHANGE 
   file?.addEventListener('change', () => {
     if (file.files.length) {
       status.textContent = `📁 Selected: ${file.files[0].name}`;
@@ -422,14 +401,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  //  TEXT INPUT AUTO-RESIZE 
   text?.addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = (this.scrollHeight) + 'px';
   });
 
-  //  INITIALIZE 
-  // Set initial score to 0
+  
   if (score) {
     score.textContent = '0';
   }

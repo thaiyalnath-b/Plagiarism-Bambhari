@@ -3,131 +3,123 @@
 <!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Logout | BRI PLAGIARISM</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout | BRI PLAGIARISM</title>
 
-<style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Inter", Arial, sans-serif;
+        }
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family: "Inter", Arial, sans-serif;
-}
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f4f6fb;
+        }
 
-/* Page Background */
-body{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#f4f6fb;
-}
+        .container {
+            background: #ffffff;
+            padding: 45px 40px;
+            border-radius: 12px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border: 1px solid #eee;
+        }
 
-/* Card */
-.container{
-background:#ffffff;
-padding:45px 40px;
-border-radius:12px;
-width:400px;
-text-align:center;
-box-shadow:0 12px 30px rgba(0,0,0,0.08);
-border:1px solid #eee;
-}
+        .logo {
+            width: 55px;
+            height: 55px;
+            margin: auto;
+            margin-bottom: 20px;
+            background: #eef2ff;
+            color: #4f46e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 24px;
+            font-weight: bold;
+        }
 
-/* Logo / Icon */
-.logo{
-width:55px;
-height:55px;
-margin:auto;
-margin-bottom:20px;
-background:#eef2ff;
-color:#4f46e5;
-display:flex;
-align-items:center;
-justify-content:center;
-border-radius:12px;
-font-size:24px;
-font-weight:bold;
-}
+        h1 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #111;
+        }
 
-/* Heading */
-h1{
-font-size:22px;
-margin-bottom:10px;
-color:#111;
-}
+        p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
 
-/* Text */
-p{
-color:#666;
-font-size:14px;
-margin-bottom:30px;
-}
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4f46e5;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.25s;
+        }
 
-/* Logout Button */
-button{
-width:100%;
-padding:12px;
-background:#4f46e5;
-border:none;
-border-radius:8px;
-color:white;
-font-size:14px;
-cursor:pointer;
-transition:0.25s;
-}
+        button:hover {
+            background: #4338ca;
+        }
 
-button:hover{
-background:#4338ca;
-}
+        a {
+            display: block;
+            margin-top: 15px;
+            text-decoration: none;
+            color: #666;
+            font-size: 14px;
+        }
 
-/* Cancel Link */
-a{
-display:block;
-margin-top:15px;
-text-decoration:none;
-color:#666;
-font-size:14px;
-}
+        a:hover {
+            color: #111;
+        }
 
-a:hover{
-color:#111;
-}
-
-/* subtle divider */
-.divider{
-height:1px;
-background:#eee;
-margin:25px 0;
-}
-
-</style>
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 25px 0;
+        }
+    </style>
 
 </head>
 
 <body>
 
-<div class="container">
+    <div class="container">
 
-<div class="logo"><span class="brand-icon"><img src="{% static 'img/BRI Large Logo.jpg.jpeg' %}" alt=""
-            style="width:60px;"></span>
+        <div class="logo"><span class="brand-icon"><img src="{% static 'img/BRI Large Logo.jpg.jpeg' %}" alt=""
+                    style="width:60px;"></span>
         </div>
 
-<p style="color: #111;">Are you sure you want to sign out of your account?</p>
+        <p style="color: #111;">Are you sure you want to sign out of your account?</p>
 
-<form method="post">
-{% csrf_token %}
-<button type="submit">Sign Out</button>
-</form>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Sign Out</button>
+        </form>
 
-<div class="divider"></div>
+        <div class="divider"></div>
 
-<a href="/dashboard/">Cancel and return to dashboard</a>
+        <a href="/dashboard/">Cancel and return to dashboard</a>
 
-</div>
+    </div>
 
 </body>
+
 </html>

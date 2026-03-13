@@ -4,8 +4,6 @@
     box-sizing: border-box;
 }
 
-/*  NAVBAR  */
-
 .navbar {
     position: fixed;
     top: 0;
@@ -55,8 +53,6 @@
     color: rgb(145, 37, 37);
 }
 
-/*  NAV LINKS  */
-
 .nav-links {
     display: flex;
     align-items: center;
@@ -85,7 +81,6 @@
     display: none;
 }
 
-/*  BUTTON  */
 
 .nav-btn {
     background: brown;
@@ -118,7 +113,6 @@
     color: white;
 }
 
-/*  RIGHT SECTION  */
 
 .nav-rights {
     display: none;
@@ -135,7 +129,6 @@
     font-size: 14px;
 }
 
-/*  MOBILE MENU  */
 
 .mobile-menu-btn {
     background: none;
@@ -144,7 +137,6 @@
     cursor: pointer;
 }
 
-/*  MOBILE MENU OVERLAY  */
 
 .mobile-menu-overlay {
     position: fixed;
@@ -164,7 +156,6 @@
     pointer-events: auto;
 }
 
-/*  EXPLORE DROPDOWN  */
 
 .explore-dropdown {
     display: none;
@@ -196,7 +187,6 @@
     display: block;
 }
 
-/*  MOBILE NAVIGATION  */
 
 @media(max-width:1000px) {
 

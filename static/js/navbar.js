@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   const currentPath = window.location.pathname;
   const isPublicPage = publicPages.includes(currentPath);
 
-  // PUBLIC NAVBAR
+  // Public navbar
   if (isPublicPage || !user) {
     navbar.innerHTML = `
       <div class="nav-wrapper">
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     return;
   }
 
-  // PROTECTED NAVBAR
+  // Protected navbar
   function logout() {
     window.location.href = "/accounts/logout/";
   }

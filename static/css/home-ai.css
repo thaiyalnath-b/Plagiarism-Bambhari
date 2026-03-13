@@ -4,7 +4,7 @@ body {
   margin-top: -120px !important;
 }
 
-/*  GLOBAL LAYOUT  */
+/*  Layout Styles */
 
 .layout {
   display: flex;
@@ -18,7 +18,7 @@ body {
 }
 
 
-/*  SIDEBAR  */
+/*  Sidebar Styles */
 .sidebar {
   width: 260px;
   background: white;
@@ -114,7 +114,7 @@ body {
   }
 }
 
-/*  HERO SECTION  */
+/*  Hero section styles  */
 
 .hero-section {
   max-width: 1150px;
@@ -420,8 +420,6 @@ body {
 }
 
 
-/*  RESPONSIVE  */
-
 @media(max-width:900px) {
 
   .hero-grid {
@@ -449,7 +447,7 @@ body {
 }
 
 
-/*  PLATFORM TEMPLATE  */
+/*  Platform section Styles  */
 
 .page-header {
   text-align: center;
@@ -584,8 +582,6 @@ body {
 }
 
 
-/*  RESPONSIVE  */
-
 @media(max-width:900px) {
 
   .arch-diagram {
@@ -602,7 +598,7 @@ body {
 
 }
 
-/*  FEATURES  */
+/*  Features Section Styles */
 
 
 .page-header {
@@ -714,7 +710,7 @@ body {
 }
 
 
-/*  ABOUT SECTION  */
+/*  About Section styles */
 .about-section {
   max-width: 1200px;
   margin: auto;
@@ -895,7 +891,6 @@ body {
   line-height: 1.6;
 }
 
-/*  RESPONSIVE  */
 
 @media(max-width:900px) {
 
@@ -912,10 +907,6 @@ body {
   }
 
 }
-
-
-
-/*  TEAM  */
 
 .team-grid {
   display: grid;
@@ -936,7 +927,7 @@ body {
   margin-bottom: 10px;
 }
 
-/*  PRICING SECTION  */
+/*  Pricing section Styles  */
 
 .pricing-section {
   max-width: 1150px;
@@ -1019,10 +1010,6 @@ body {
   margin-left: 4px;
 }
 
-
-
-/* ===== FEATURES ===== */
-
 .pricing-features {
   list-style: none;
   padding: 0;
@@ -1065,9 +1052,6 @@ body {
   background: #4338ca;
 }
 
-
-/*  RESPONSIVE  */
-
 @media(max-width:900px) {
 
   .pricing-card.popular {
@@ -1076,7 +1060,7 @@ body {
 
 }
 
-/*  RESOURCES SECTION  */
+/*  Resource section styles */
 
 .resources-section {
   max-width: 1150px;
@@ -1156,7 +1140,7 @@ body {
 }
 
 
-/*  CONTACT SECTION  */
+/*  Contact Section styles */
 .contact-section {
   max-width: 1100px;
   margin: auto;
@@ -1269,8 +1253,6 @@ body {
   background: #000;
 }
 
-/*  RESPONSIVE  */
-
 @media(max-width:900px) {
 
   .contact-grid {
@@ -1280,9 +1262,6 @@ body {
 
 }
 
-
-
-/*  RESPONSIVE  */
 
 @media(max-width:1000px) {
 
@@ -1305,7 +1284,7 @@ body {
 }
 
 
-/*  OVERVIEW SECTION  */
+/*  Overview Section Styles  */
 
 .overview-section {
   max-width: 1200px;
@@ -1393,7 +1372,6 @@ body {
   color: #64748b;
 }
 
-/* Responsive */
 @media(max-width:900px) {
 
   .page-title {
@@ -1406,7 +1384,7 @@ body {
 
 }
 
-/*  PLAGIARISM SECTION  */
+/*  Plagiarism Section Styles  */
 
 .plagiarism-deep-section {
   max-width: 1150px;
@@ -1540,9 +1518,6 @@ body {
   padding: 4px 0;
 }
 
-
-/*  RESPONSIVE  */
-
 @media(max-width:900px) {
 
   .types-grid {
@@ -1557,7 +1532,7 @@ body {
 
 
 
-/*  TECHNOLOGY SECTION  */
+/*  Technologies Section  */
 
 .technology-deep-section {
   max-width: 1150px;
@@ -1692,8 +1667,6 @@ body {
 }
 
 
-/*  RESPONSIVE  */
-
 @media(max-width:900px) {
 
   .tech-step {
@@ -1702,7 +1675,7 @@ body {
 
 }
 
-/* USE CASE SECTION */
+/* Usecase Section styles */
 .usecases-deep-section {
   max-width: 1150px;
   margin: auto;
@@ -1770,7 +1743,7 @@ body {
   }
 }
 
-/* LIVE DEMO PAGE */
+/* Live Demo Page Styles */
 .demo-full-section {
   max-width: 1150px;
   margin: auto;
@@ -1881,7 +1854,7 @@ padding-left:40px;
 padding-right:40px;
 }
 
-/* HEADER */
+/* Deashboard Section Styles */
 
 .dashboard-header{
 display:flex;
@@ -1922,8 +1895,6 @@ font-size:13px;
 color:#777;
 }
 
-/* ACTION GRID */
-
 .actions-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -1951,8 +1922,6 @@ font-size:28px;
 display:block;
 margin-bottom:10px;
 }
-
-/* UPLOAD SECTION */
 
 .upload-grid{
 display:grid;

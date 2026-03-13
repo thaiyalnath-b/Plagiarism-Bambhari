@@ -1,4 +1,4 @@
-// STORAGE MANAGER 
+// Storage manager 
 class StorageManager {
     constructor() {
         this.storageKey = 'bri_ai_user_data';
@@ -183,7 +183,7 @@ class StorageManager {
     }
 }
 
-// GLOBAL STATE 
+// This is for Global State 
 const AppState = {
     analyses: [],
     results: [],
@@ -215,7 +215,7 @@ const AppState = {
 
 const storageManager = new StorageManager();
 
-//  SECTION MANAGER 
+//  Section manager 
 class SectionManager {
     constructor() {
         this.sections = document.querySelectorAll('.content-section');
@@ -270,7 +270,7 @@ class SectionManager {
     }
 }
 
-// RESULTS SECTION 
+// Results Section 
 class ResultsSection {
     constructor() {
         this.container = document.getElementById('results-container');
@@ -430,7 +430,7 @@ class ResultsSection {
     }
 }
 
-// REPORTS SECTION
+// Reports Section
 class ReportsSection {
     constructor() {
         this.container = document.getElementById('reports-container');
@@ -517,7 +517,7 @@ class ReportsSection {
     }
 }
 
-// CITATIONS SECTION 
+// Citations section
 class CitationsSection {
     constructor() {
         this.container = document.getElementById('citations-container');
@@ -616,7 +616,7 @@ class CitationsSection {
     }
 }
 
-// SIMILARITY SECTION 
+// Similarity section
 class SimilaritySection {
     constructor() {
         this.container = document.getElementById('similarity-container');
@@ -697,7 +697,7 @@ class SimilaritySection {
     }
 }
 
-// HISTORY SECTION 
+// History section
 class HistorySection {
     constructor() {
         this.container = document.getElementById('history-container');
@@ -711,17 +711,9 @@ class HistorySection {
 
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-
-                // remove active class
                 filterBtns.forEach(b => b.classList.remove('active'));
-
-                // add active class
                 btn.classList.add('active');
-
-                // update filter
                 this.currentFilter = btn.dataset.filter;
-
-                // re-render
                 this.render();
             });
         });
@@ -830,7 +822,7 @@ class HistorySection {
     }
 }
 
-// COPYRIGHT SECTION
+// Copyright section
 class CopyrightSection {
     constructor() {
         this.container = document.getElementById('copyright-container');
@@ -929,7 +921,7 @@ class CopyrightSection {
     }
 }
 
-// SETTINGS SECTION
+// Settings section
 class SettingsSection {
     constructor() {
         this.container = document.getElementById('settings-container');
@@ -1043,7 +1035,7 @@ class SettingsSection {
     }
 }
 
-// UPLOAD HANDLER 
+// Upload handler
 class UploadHandler {
     constructor() {
         this.fileInput = document.getElementById('fileInput');
@@ -1183,7 +1175,7 @@ class UploadHandler {
             const data = await response.json();
             console.log(' Backend response:', data);
 
-            //  Use REAL data from backend
+            //  Use Real data from backend
             const analysis = {
                 id: data.id || data.report_id || Date.now(),
                 title: data.title || title,
@@ -1308,7 +1300,7 @@ class UploadHandler {
     }
 }
 
-// INITIALIZATION 
+// Initialization 
 document.addEventListener('DOMContentLoaded', function () {
     window.resultsSection = new ResultsSection();
     window.reportsSection = new ReportsSection();
