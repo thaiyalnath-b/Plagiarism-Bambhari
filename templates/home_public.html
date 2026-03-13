@@ -1,0 +1,1382 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>BRI PLAGIARISM</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="{% static 'img/BRI Large Logo.jpg.jpeg' %}">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Calistoga&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="stylesheet" href="{% static 'css/home-ai.css' %}">
+  <link rel="stylesheet" href="{% static 'css/footer.css' %}">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+  <!-- AOS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Animated Background -->
+  <div class="gradient-bg">
+    <div class="gradient-orb orb-1"></div>
+    <div class="gradient-orb orb-2"></div>
+    <div class="gradient-orb orb-3"></div>
+    <div class="gradient-orb orb-4"></div>
+  </div>
+
+  <div class="noise-overlay"></div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-icon"><img src="{% static 'img/BRI Large Logo.jpg.jpeg' %}" alt=""
+            style="width:60px;"></span>
+        <span class="brand-text">BRI <br><span class="brand-highlight">PLAGIARISM</span></span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+        <!-- <li><a href="#platform" class="nav-link" data-page="platform">Platform</a></li> -->
+        <li><a href="#features" class="nav-link" data-page="features">Features</a></li>
+        <li><a href="#about" class="nav-link" data-page="about">About</a></li>
+        <!-- <li><a href="#pricing" class="nav-link" data-page="pricing">Pricing</a></li> -->
+        <!-- <li><a href="#resources" class="nav-link" data-page="resources">Resources</a></li> -->
+        <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+        <li class="explore-dropdown">
+          <a href="#" class="nav-link explore-btn">Explore</a>
+
+          <div class="explore-menu">
+            <a href="#overview" data-sidebar="overview">Overview</a>
+            <a href="#plagiarism" data-sidebar="plagiarism">What is Plagiarism?</a>
+            <a href="#technology" data-sidebar="technology">AI Technology</a>
+            <a href="#usecases" data-sidebar="usecases">Use Cases</a>
+            <a href="#demo" data-sidebar="demo">Live Demo</a>
+          </div>
+        </li>
+
+        <li><a href="/login/" class="nav-btn">Dashboard →</a></li>
+
+        <!-- <li><a href="" class="nav-link">Publish</a></li>
+        <li><a href="" class="nav-btnn">Join</a></li> -->
+
+      </ul>
+
+      <div class="nav-rights">
+        <a href="/login/" class="nav-btn-mobile">Sign In</a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileOverlay"></div>
+
+  <!-- ================= MAIN LAYOUT ================= -->
+  <div class="layout">
+    <!-- ================= SIDEBAR ================= -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <!-- <div class="sidebar-logo">🧭</div> -->
+        <h3>Explore</h3>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#overview" class="sidebar-link active" data-sidebar="overview">
+          <!-- <span class="sidebar-icon">📊</span> -->
+          <span>Overview</span>
+        </a>
+        <a href="#plagiarism" class="sidebar-link" data-sidebar="plagiarism">
+          <!-- <span class="sidebar-icon">🤔</span> -->
+          <span>What is Plagiarism?</span>
+        </a>
+        <a href="#technology" class="sidebar-link" data-sidebar="technology">
+          <!-- <span class="sidebar-icon">🤖</span> -->
+          <span>AI Technology</span>
+        </a>
+        <a href="#usecases" class="sidebar-link" data-sidebar="usecases">
+          <!-- <span class="sidebar-icon">🎯</span> -->
+          <span>Use Cases</span>
+        </a>
+        <a href="#demo" class="sidebar-link" data-sidebar="demo">
+          <!-- <span class="sidebar-icon">🎥</span> -->
+          <span>Live Demo</span>
+        </a>
+      </nav>
+
+      <!-- <div class="sidebar-cta">
+        <div class="cta-content">
+          <span class="cta-icon">⚡</span>
+          <h4>API Access</h4>
+          <p>Integrate with your workflow</p>
+          <a href="/developers/" class="cta-link">Learn more →</a>
+        </div>
+      </div> -->
+    </aside>
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <main class="main-content" id="mainContent">
+      <!-- Content will be dynamically loaded here -->
+    </main>
+  </div>
+
+  <!-- Hidden Templates for Dynamic Loading -->
+  <div style="display: none;">
+    <!-- HOME PAGE -->
+    <div id="home-template">
+      <!-- HERO SECTION -->
+      <section class="hero-section">
+        <div class="hero-grid">
+          <div class="hero-text" data-aos="fade-right">
+            <div class="hero-badge">
+              <span class="badge-pulse"></span>
+              AI-Powered Detection
+            </div>
+            <h1 class="hero-title">
+              <span class="title-line">Intelligent Plagiarism</span>
+              <span class="title-gradient">Detection for the</span>
+              <span class="title-highlight">Modern Era</span>
+            </h1>
+            <p class="hero-description">
+              Harness the power of advanced AI to protect your content, ensure academic integrity,
+              and maintain originality across all your documents.
+            </p>
+
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">10K+</span>
+                <span class="stat-label">Documents Scanned</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Accuracy Rate</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Languages</span>
+              </div>
+            </div>
+
+            <div class="hero-actions">
+              <a href="/signup/" class="btn-primary">
+                Start Free Trial
+                <span class="btn-icon">→</span>
+              </a>
+              <a href="#demo" class="btn-outline sidebar-trigger" data-sidebar="demo">
+                <span class="btn-icon">▶</span>
+                Watch Demo
+              </a>
+            </div>
+
+            <div class="hero-trust">
+              <div class="trust-item">
+                <span>⭐ 4.9/5</span>
+                <span>from 2k+ reviews</span>
+              </div>
+              <div class="trust-item">
+                <span>🔒 GDPR Compliant</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" data-aos="fade-left">
+            <div class="visual-container">
+              <div class="floating-card card-1">
+                <span class="card-icon">📊</span>
+                <div class="card-content">
+                  <span class="card-label">Originality Score</span>
+                  <span class="card-value">98%</span>
+                </div>
+              </div>
+              <div class="floating-card card-2">
+                <span class="card-icon"></span>
+                <div class="card-content">
+                  <span class="card-label">Matches Found</span>
+                  <span class="card-value">3</span>
+                </div>
+              </div>
+              <div class="floating-card card-3">
+                <span class="card-icon"></span>
+                <div class="card-content">
+                  <span class="card-label">Clean Report</span>
+                  <span class="card-value">Ready</span>
+                </div>
+              </div>
+              <div class="visual-graph">
+                <svg viewBox="0 0 400 300" class="graph-svg">
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stop-color="#6366f1" />
+                      <stop offset="50%" stop-color="#8b5cf6" />
+                      <stop offset="100%" stop-color="#ec4899" />
+                    </linearGradient>
+                  </defs>
+                  <path class="graph-line" d="M0 200 Q 100 100, 200 150 T 400 100" />
+                  <circle class="graph-dot" cx="0" cy="200" r="4" />
+                  <circle class="graph-dot" cx="100" cy="100" r="4" />
+                  <circle class="graph-dot" cx="200" cy="150" r="4" />
+                  <circle class="graph-dot" cx="300" cy="120" r="4" />
+                  <circle class="graph-dot" cx="400" cy="100" r="4" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLATFORM OVERVIEW (Summary) -->
+      <section class="platform-section">
+        <div class="section-header" data-aos="fade-up">
+          <span class="section-subtitle">Why Choose BRI PLAGIARISM</span>
+          <h2 class="section-title">Next-Generation <span class="gradient-text">Plagiarism Detection</span></h2>
+          <p class="section-description">
+            Our platform combines cutting-edge AI technology with intuitive design to deliver
+            unparalleled accuracy and user experience.
+          </p>
+        </div>
+
+        <div class="platform-grid">
+          <div class="platform-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="card-icon-wrapper">
+              <span class="platform-icon"><i class="fa-brands fa-buffer"></i></span>
+            </div>
+            <h3>Advanced Neural Networks</h3>
+            <p>Deep learning models trained on millions of documents for superior accuracy</p>
+            <!-- <a href="#platform" class="card-link nav-trigger" data-page="platform">Learn more →</a> -->
+          </div>
+
+          <div class="platform-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-icon-wrapper">
+              <span class="platform-icon"><i class="fa-solid fa-chart-line"></i></span>
+            </div>
+            <h3>Real-time Analysis</h3>
+            <p>Get results in seconds with our optimized processing engine</p>
+            <!-- <a href="#platform" class="card-link nav-trigger" data-page="platform">Learn more →</a> -->
+          </div>
+
+          <div class="platform-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-icon-wrapper">
+              <span class="platform-icon"><i class="fa-solid fa-shield"></i></span>
+            </div>
+            <h3>Enterprise Security</h3>
+            <p>Bank-level encryption and privacy protection for your documents</p>
+            <!-- <a href="#platform" class="card-link nav-trigger" data-page="platform">Learn more →</a> -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- PLATFORM PAGE -->
+    <div id="platform-template">
+      <section class="page-header">
+        <h1 class="page-title">Our <span class="gradient-text">Platform</span></h1>
+        <p class="page-description">Discover the technology powering next-generation plagiarism detection</p>
+      </section>
+
+      <section class="platform-deep-section">
+        <div class="platform-architecture">
+          <h2>Platform Architecture</h2>
+          <div class="arch-diagram">
+            <div class="arch-layer" data-aos="fade-up">
+              <span class="layer-icon">🌐</span>
+              <h3>Web Interface</h3>
+              <p>React-based SPA with real-time updates</p>
+            </div>
+            <div class="arch-arrow">➜</div>
+            <div class="arch-layer" data-aos="fade-up" data-aos-delay="100">
+              <span class="layer-icon">⚙️</span>
+              <h3>API Gateway</h3>
+              <p>RESTful API with rate limiting</p>
+            </div>
+            <div class="arch-arrow">➜</div>
+            <div class="arch-layer" data-aos="fade-up" data-aos-delay="200">
+              <span class="layer-icon">💡</span>
+              <h3>AI Engine</h3>
+              <p>TensorFlow models for similarity detection</p>
+            </div>
+            <div class="arch-arrow">➜</div>
+            <div class="arch-layer" data-aos="fade-up" data-aos-delay="300">
+              <span class="layer-icon">🗄️</span>
+              <h3>Database Layer</h3>
+              <p>Distributed indexing of billions of sources</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-specs">
+          <h2>Technical Specifications</h2>
+          <div class="specs-grid">
+            <div class="spec-card">
+              <span class="spec-value">500ms</span>
+              <span class="spec-label">Average Response Time</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-value">10B+</span>
+              <span class="spec-label">Indexed Documents</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-value">99.99%</span>
+              <span class="spec-label">Uptime SLA</span>
+            </div>
+            <div class="spec-card">
+              <span class="spec-value">256-bit</span>
+              <span class="spec-label">Encryption</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- FEATURES PAGE -->
+    <div id="features-template">
+      <section class="page-header">
+        <h1 class="page-title">Powerful <span class="gradient-text">Features</span></h1>
+        <p class="page-description">Everything you need to ensure content originality</p>
+      </section>
+
+      <section class="features-deep-section">
+        <div class="features-category">
+          <h2>Core Features</h2>
+          <div class="features-detailed-grid">
+            <div class="feature-detailed-card">
+              <span class="feature-detailed-icon"><i class="fa-solid fa-book-open"></i></span>
+              <h3>Text Analysis</h3>
+              <ul>
+                <li>Sentence-by-sentence comparison</li>
+                <li>Paraphrase detection</li>
+                <li>Citation checking</li>
+                <li>Grammar analysis</li>
+              </ul>
+            </div>
+            <div class="feature-detailed-card">
+              <span class="feature-detailed-icon"><i class="fa-solid fa-folder-closed"></i></span>
+              <h3>Document Processing</h3>
+              <ul>
+                <li>PDF text extraction</li>
+                <li>DOCX parsing</li>
+                <li>OCR for scanned docs</li>
+                <li>Batch processing</li>
+              </ul>
+            </div>
+            <div class="feature-detailed-card">
+              <span class="feature-detailed-icon"><i class="fa-solid fa-newspaper"></i></span>
+              <h3>Reporting</h3>
+              <ul>
+                <li>Interactive dashboards</li>
+                <li>PDF report generation</li>
+                <li>Source highlighting</li>
+                <li>Export options</li>
+              </ul>
+            </div>
+            <!-- <div class="feature-detailed-card">
+              <span class="feature-detailed-icon"><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+              <h3>Integrations</h3>
+              <ul>
+                <li>REST API</li>
+                <li>LMS integration</li>
+                <li>Browser extensions</li>
+                <li>Zapier support</li>
+              </ul>
+            </div> -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="about-template">
+      <section class="page-header">
+        <h1 class="page-title">About <span class="gradient-text">BRI PLAGIARISM</span></h1>
+        <p class="page-description">Our mission to protect originality worldwide</p>
+      </section>
+
+      <section class="about-section">
+        <div class="about-grid">
+
+          <div class="about-content">
+            <h2>About US</h2>
+
+            <p>
+              BRI Plagiarism is a research-driven platform developed under
+              <strong>Bambhari Research Institute</strong> to support academic integrity,
+              originality, and responsible content creation. As digital content continues
+              to expand across education, research, and online publishing, verifying the
+              authenticity of written work has become more important than ever.
+            </p>
+
+            <p>
+              Our platform provides a reliable way for students, educators, researchers,
+              and professionals to analyze documents and detect similarities with existing
+              content. Using advanced text analysis and similarity detection techniques,
+              the system generates detailed reports that help users identify overlapping
+              sections and improve the originality of their work before submission or
+              publication.
+            </p>
+
+            <p>
+              At Bambhari Research Institute, we are committed to building intelligent
+              technology solutions that support ethical research practices, transparent
+              knowledge sharing, and high-quality academic standards.
+            </p>
+
+            <div class="mission-statement">
+              <span class="quote-mark">"</span>
+              <p>
+                Supporting originality, protecting academic integrity, and empowering
+                researchers with intelligent plagiarism detection technology.
+              </p>
+            </div>
+          </div>
+
+
+          <div class="about-stats">
+
+            <div class="about-stat-card">
+              <span class="about-stat-number">AI</span>
+              <span class="about-stat-label">Similarity Detection</span>
+            </div>
+
+            <div class="about-stat-card">
+              <span class="about-stat-number">Secure</span>
+              <span class="about-stat-label">Document Processing</span>
+            </div>
+
+            <div class="about-stat-card">
+              <span class="about-stat-number">Fast</span>
+              <span class="about-stat-label">Analysis Engine</span>
+            </div>
+
+            <div class="about-stat-card">
+              <span class="about-stat-number">BRI</span>
+              <span class="about-stat-label">Research Initiative</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- <div class="team-section">
+
+          <h2 class="team-title">Our Leadership Team</h2>
+          <p class="team-subtitle">
+            Visionary leaders driving innovation and research excellence.
+          </p>
+
+          <div class="team-grid">
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{% static 'img/shreyas.svg' %}" alt="Shreyas">
+              </div>
+
+              <div class="team-info">
+                <h3>Shreyas Bharadwaj B A</h3>
+                <span class="team-role">Managing Director</span>
+
+                <p>
+                  Leading operational excellence and ensuring sustainable growth
+                  of research and innovation programs.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{% static 'img/Prabhakar K Senior Manager Bambhari.svg' %}" alt="Prabhakar">
+              </div>
+
+              <div class="team-info">
+                <h3>Prabhakar K</h3>
+                <span class="team-role">Chief Operating Officer</span>
+
+                <p>
+                  Overseeing applied research projects and strengthening
+                  collaboration with academic and industry partners.
+                </p>
+              </div>
+            </div>
+
+
+            <div class="team-card">
+              <div class="team-image">
+                <img src="{% static 'img/Sahana H M Vice President Bambhari.svg' %}" alt="Sahana">
+              </div>
+
+              <div class="team-info">
+                <h3>Sahana</h3>
+                <span class="team-role">Vice President</span>
+
+                <p>
+                  Building strategic partnerships and accelerating the
+                  translation of research into real-world impact.
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div> -->
+      </section>
+    </div>
+
+    <!-- PRICING PAGE -->
+    <div id="pricing-template">
+      <section class="page-header">
+        <h1 class="page-title">Simple, <span class="gradient-text">Transparent</span> Pricing</h1>
+        <p class="page-description">Choose the plan that fits your needs</p>
+      </section>
+
+      <section class="pricing-section">
+        <div class="pricing-grid">
+          <div class="pricing-card" data-aos="fade-up">
+            <div class="pricing-badge">Free</div>
+            <h3>Basic</h3>
+            <div class="pricing-price">
+              <span class="price">$0</span>
+              <span class="period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ 10 documents/month</li>
+              <li>✓ Basic web search</li>
+              <li>✓ Text analysis</li>
+              <li>✓ Email support</li>
+            </ul>
+            <a href="/signup/" class="pricing-btn">Get Started</a>
+          </div>
+
+          <div class="pricing-card popular" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-badge">Most Popular</div>
+            <h3>Pro</h3>
+            <div class="pricing-price">
+              <span class="price">$29</span>
+              <span class="period">/month</span>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ 500 documents/month</li>
+              <li>✓ Deep web search</li>
+              <li>✓ Academic databases</li>
+              <li>✓ API access</li>
+              <li>✓ Priority support</li>
+            </ul>
+            <a href="/signup/" class="pricing-btn primary">Start Free Trial</a>
+          </div>
+
+          <div class="pricing-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-badge">Enterprise</div>
+            <h3>Custom</h3>
+            <div class="pricing-price">
+              <span class="price">Custom</span>
+            </div>
+            <ul class="pricing-features">
+              <li>✓ Unlimited documents</li>
+              <li>✓ Custom integration</li>
+              <li>✓ SLA guarantee</li>
+              <li>✓ Dedicated support</li>
+              <li>✓ On-premise option</li>
+            </ul>
+            <a href="/contact/" class="pricing-btn">Contact Sales</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RESOURCES PAGE -->
+    <div id="resources-template">
+      <section class="page-header">
+        <h1 class="page-title">Learning <span class="gradient-text">Resources</span></h1>
+        <p class="page-description">Guides, tutorials, and best practices</p>
+      </section>
+
+      <section class="resources-section">
+        <div class="resources-grid">
+          <div class="resource-card">
+            <span class="resource-icon">📘</span>
+            <h3>Getting Started Guide</h3>
+            <p>Learn the basics of plagiarism detection</p>
+            <!-- <a href="#" class="resource-link">Read more →</a> -->
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">📹</span>
+            <h3>Video Tutorials</h3>
+            <p>Watch step-by-step guides</p>
+            <!-- <a href="#" class="resource-link">Watch now →</a> -->
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">📄</span>
+            <h3>Case Studies</h3>
+            <p>See how others use BRI PLAGIARISM</p>
+            <!-- <a href="#" class="resource-link">Explore →</a> -->
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">🔧</span>
+            <h3>API Documentation</h3>
+            <p>Integrate with your apps</p>
+            <!-- <a href="#" class="resource-link">View docs →</a> -->
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">💻</span>
+            <h3>Webinars</h3>
+            <p>Live and recorded sessions</p>
+            <!-- <a href="#" class="resource-link">Register →</a> -->
+          </div>
+          <div class="resource-card">
+            <span class="resource-icon">💬</span>
+            <h3>Community Forum</h3>
+            <p>Connect with other users</p>
+            <!-- <a href="#" class="resource-link">Join →</a> -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contact-template">
+      <section class="page-header">
+        <h1 class="page-title">Get in <span class="gradient-text">Touch</span></h1>
+        <p class="page-description">We're here to help</p>
+      </section>
+
+      <section class="contact-section">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h2>Contact Information</h2>
+            <div class="contact-details">
+              <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                <div>
+                  <h4>Email</h4>
+                  <p>contactus@bambhari.com</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-phone"></i></span>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+91 8660758419 </p>
+                  <p>+91 9987166716</p>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <span class="contact-icon"><i class="fa-solid fa-location-crosshairs"></i></span>
+                <div>
+                  <h4>Office</h4>
+                  <p>Bambhari Private Limited,</p>
+                  <p>22nd Floor,</p>
+                  <p> World Trade Center,</p>
+                  <p>Brigade Gateway Campus,</p>
+                  <p>Bengaluru - 560055, India</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="contactForm">
+              <div class="form-group">
+                <input type="text" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <select>
+                  <option>Select Subject</option>
+                  <option>General Inquiry</option>
+                  <option>Sales</option>
+                  <option>Support</option>
+                  <option>Partnership</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <textarea rows="5" placeholder="Your Message"></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- OVERVIEW PAGE (Sidebar) -->
+    <div id="overview-template">
+
+      <section class="page-header">
+        <h1 class="page-title">Platform <span class="gradient-text">Overview</span></h1>
+        <p class="page-description">
+          Our plagiarism detection platform is designed to help students, researchers,
+          and professionals verify the originality of their documents through
+          intelligent text similarity analysis.
+        </p>
+      </section>
+
+      <section class="overview-section">
+
+        <div class="overview-features">
+          <h2>How the Platform Works</h2>
+
+          <div class="overview-grid">
+
+            <div class="overview-feature">
+              <span class="feature-number">01</span>
+              <h3>Document Upload</h3>
+              <p>
+                Users can upload documents in supported formats such as PDF
+                or text files. The platform securely receives and prepares
+                the document for analysis.
+              </p>
+            </div>
+
+            <div class="overview-feature">
+              <span class="feature-number">02</span>
+              <h3>Text Extraction</h3>
+              <p>
+                The system extracts textual content from the uploaded file
+                and prepares it for comparison using preprocessing techniques
+                such as tokenization and text normalization.
+              </p>
+            </div>
+
+            <div class="overview-feature">
+              <span class="feature-number">03</span>
+              <h3>Similarity Analysis</h3>
+              <p>
+                Advanced text comparison algorithms analyze the document
+                against stored documents and identify similar or matching
+                content patterns.
+              </p>
+            </div>
+
+            <div class="overview-feature">
+              <span class="feature-number">04</span>
+              <h3>Report Generation</h3>
+              <p>
+                A detailed similarity report is generated, highlighting
+                matched sections and providing a similarity percentage
+                to help users review their document.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="overview-features">
+          <h2>Platform Capabilities</h2>
+
+          <div class="overview-grid">
+
+            <div class="overview-feature">
+              <h3>Advanced Text Processing</h3>
+              <p>
+                The platform applies modern text processing techniques to
+                analyze sentence structures and detect similarities between
+                documents efficiently.
+              </p>
+            </div>
+
+            <div class="overview-feature">
+              <h3>Secure Document Handling</h3>
+              <p>
+                Uploaded files are processed securely within the system and
+                are handled with strict attention to user privacy and data safety.
+              </p>
+            </div>
+
+            <div class="overview-feature">
+              <h3>Fast Analysis Engine</h3>
+              <p>
+                Optimized processing pipelines allow the system to analyze
+                documents quickly while maintaining accurate similarity detection.
+              </p>
+            </div>
+
+            <div class="overview-feature">
+              <h3>User-Friendly Reports</h3>
+              <p>
+                The platform generates clear and structured reports that
+                help users easily understand and review potential plagiarism.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+    <!-- WHAT IS PLAGIARISM PAGE (Sidebar) -->
+    <div id="plagiarism-template">
+      <section class="page-header">
+        <h1 class="page-title">What is <span class="gradient-text">Plagiarism?</span></h1>
+        <p class="page-description">Understanding academic integrity and content originality</p>
+      </section>
+
+      <section class="plagiarism-deep-section">
+        <div class="plagiarism-types-detailed">
+          <h2>Types of Plagiarism</h2>
+          <div class="types-grid">
+            <div class="type-detailed-card">
+              <h3>Direct Plagiarism</h3>
+              <p>Copying text word-for-word without attribution</p>
+              <div class="example">
+                <strong>Example:</strong> Copying a paragraph from a source without quotes or citation
+              </div>
+            </div>
+            <div class="type-detailed-card">
+              <h3>Mosaic Plagiarism</h3>
+              <p>Changing words while keeping original structure</p>
+              <div class="example">
+                <strong>Example:</strong> Replacing synonyms in a sentence while maintaining the same structure
+              </div>
+            </div>
+            <div class="type-detailed-card">
+              <h3>Idea Plagiarism</h3>
+              <p>Presenting someone's ideas as your own</p>
+              <div class="example">
+                <strong>Example:</strong> Using a unique research methodology without credit
+              </div>
+            </div>
+            <div class="type-detailed-card">
+              <h3>Self-Plagiarism</h3>
+              <p>Reusing your own previous work without citation</p>
+              <div class="example">
+                <strong>Example:</strong> Submitting the same paper to multiple classes
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="consequences-section">
+          <h2>Consequences</h2>
+          <div class="consequences-grid">
+            <div class="consequence-card">
+              <span class="consequence-icon">🎓</span>
+              <h3>Academic</h3>
+              <ul>
+                <li>Course failure</li>
+                <li>Expulsion</li>
+                <li>Degree revocation</li>
+              </ul>
+            </div>
+            <div class="consequence-card">
+              <span class="consequence-icon">⚖️</span>
+              <h3>Legal</h3>
+              <ul>
+                <li>Copyright infringement</li>
+                <li>Financial penalties</li>
+                <li>Lawsuits</li>
+              </ul>
+            </div>
+            <div class="consequence-card">
+              <span class="consequence-icon">💼</span>
+              <h3>Professional</h3>
+              <ul>
+                <li>Termination</li>
+                <li>Reputation damage</li>
+                <li>Career limitations</li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+      </section>
+    </div>
+
+    <!-- AI TECHNOLOGY PAGE (Sidebar) -->
+    <div id="technology-template">
+      <section class="page-header">
+        <h1 class="page-title">AI <span class="gradient-text">Technology</span></h1>
+        <p class="page-description">The advanced algorithms behind our detection</p>
+      </section>
+
+      <section class="technology-deep-section">
+        <div class="tech-architecture">
+          <h2>How It Works</h2>
+          <div class="tech-steps-vertical">
+            <div class="tech-step">
+              <div class="tech-step-number">1</div>
+              <div class="tech-step-content">
+                <h3>Text Vectorization</h3>
+                <p>Convert text to numerical vectors using BERT embeddings</p>
+              </div>
+            </div>
+            <div class="tech-step">
+              <div class="tech-step-number">2</div>
+              <div class="tech-step-content">
+                <h3>Semantic Analysis</h3>
+                <p>Understand meaning beyond exact word matching</p>
+              </div>
+            </div>
+            <div class="tech-step">
+              <div class="tech-step-number">3</div>
+              <div class="tech-step-content">
+                <h3>Database Comparison</h3>
+                <p>Compare against billions of indexed sources</p>
+              </div>
+            </div>
+            <div class="tech-step">
+              <div class="tech-step-number">4</div>
+              <div class="tech-step-content">
+                <h3>Score Calculation</h3>
+                <p>Generate similarity scores with confidence levels</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tech-metrics">
+          <h2>Performance Metrics</h2>
+          <div class="metrics-grid">
+            <div class="metric-card">
+              <span class="metric-value">99.9%</span>
+              <span class="metric-label">Accuracy</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">0.5s</span>
+              <span class="metric-label">Avg Response</span>
+            </div>
+            <div class="metric-card">
+              <span class="metric-value">50+</span>
+              <span class="metric-label">Languages</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- USE CASES PAGE (Sidebar) -->
+    <div id="usecases-template">
+      <section class="page-header">
+        <h1 class="page-title">Use <span class="gradient-text">Cases</span></h1>
+        <p class="page-description">Real-world applications of BRI PLAGIARISM</p>
+      </section>
+
+      <section class="usecases-deep-section">
+        <div class="usecase-cards">
+          <div class="usecase-card-detailed">
+            <div class="usecase-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Academic Institutions</h3>
+            <p>Universities and schools use BRI PLAGIARISM to maintain academic integrity across thousands of
+              submissions.</p>
+            <ul>
+              <li>Student assignment checking</li>
+              <li>Thesis verification</li>
+              <li>Research paper validation</li>
+            </ul>
+          </div>
+          <div class="usecase-card-detailed">
+            <div class="usecase-icon"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Publishing Houses</h3>
+            <p>Book publishers and journals ensure content originality before publication.</p>
+            <ul>
+              <li>Manuscript screening</li>
+              <li>Author verification</li>
+              <li>Copyright protection</li>
+            </ul>
+          </div>
+          <div class="usecase-card-detailed">
+            <div class="usecase-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+            <h3>Corporations</h3>
+            <p>Businesses protect their intellectual property and marketing content.</p>
+            <ul>
+              <li>Internal document checking</li>
+              <li>Marketing content verification</li>
+              <li>Competitor monitoring</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- LIVE DEMO PAGE (Sidebar) -->
+    <div id="demo-template">
+      <section class="page-header">
+        <h1 class="page-title">Live <span class="gradient-text">Demo</span></h1>
+        <p class="page-description">Try our plagiarism checker right now</p>
+      </section>
+
+      <section class="demo-full-section">
+        <div class="demo-container-full">
+          <div class="demo-input-area">
+            <h3>Enter Text to Check</h3>
+            <textarea id="demoText" rows="8"
+              placeholder="Paste your text here...">Artificial intelligence has revolutionized the way we approach plagiarism detection. Modern systems use deep learning to understand context and semantics.</textarea>
+            <button class="demo-check-btn" id="checkDemoBtn">Check Plagiarism</button>
+          </div>
+          <div class="demo-results-area" id="demoResults">
+            <h3>Results</h3>
+            <div class="demo-score">
+              <div class="score-circle">
+                <span class="score-number">0%</span>
+              </div>
+            </div>
+            <div class="demo-sources">
+              <p>Click "Check Plagiarism" to see results</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 100
+    });
+
+    // Page Data - Maps to templates
+    const pages = {
+      home: 'home-template',
+      platform: 'platform-template',
+      features: 'features-template',
+      about: 'about-template',
+      pricing: 'pricing-template',
+      resources: 'resources-template',
+      contact: 'contact-template',
+      overview: 'overview-template',
+      plagiarism: 'plagiarism-template',
+      technology: 'technology-template',
+      usecases: 'usecases-template',
+      demo: 'demo-template'
+    };
+
+    // Current active page/sidebar
+    let currentPage = 'home';
+    let currentSidebar = 'overview';
+
+    // Load content function
+    function loadContent(pageId, sidebarId = null) {
+      const mainContent = document.getElementById('mainContent');
+
+      // Determine which template to load
+      let templateId;
+      if (sidebarId && pages[sidebarId]) {
+        templateId = pages[sidebarId];
+        currentSidebar = sidebarId;
+
+        // Update sidebar active state
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.dataset.sidebar === sidebarId) {
+            link.classList.add('active');
+          }
+        });
+      } else if (pages[pageId]) {
+        templateId = pages[pageId];
+        currentPage = pageId;
+
+        // Update navbar active state
+        document.querySelectorAll('.nav-link').forEach(link => {
+          link.classList.remove('active');
+          if (link.dataset.page === pageId) {
+            link.classList.add('active');
+          }
+        });
+      } else {
+        templateId = 'home-template';
+      }
+
+      const template = document.getElementById(templateId);
+      if (template) {
+        mainContent.innerHTML = template.innerHTML;
+        // Reinitialize AOS for new content
+        AOS.refresh();
+      }
+
+      // Close mobile menu if open
+      document.querySelector('.nav-links').classList.remove('show');
+      document.getElementById('mobileOverlay').classList.remove('active');
+      document.getElementById('mobileMenuBtn').innerHTML = '☰';
+    }
+
+    // Navbar click handlers
+    document.querySelectorAll('.nav-link[data-page]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = link.dataset.page;
+        loadContent(page, null);
+
+        // Update URL hash without scrolling
+        history.pushState(null, null, `#${page}`);
+      });
+    });
+
+    // Sidebar click handlers
+    document.querySelectorAll('.sidebar-link[data-sidebar]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const sidebar = link.dataset.sidebar;
+        loadContent(currentPage, sidebar);
+
+        // Update URL hash
+        history.pushState(null, null, `#${currentPage}-${sidebar}`);
+      });
+    });
+
+    // Sidebar trigger links (from main content)
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.sidebar-trigger')) {
+        e.preventDefault();
+        const trigger = e.target.closest('.sidebar-trigger');
+        const sidebar = trigger.dataset.sidebar;
+        if (sidebar) {
+          loadContent(currentPage, sidebar);
+        }
+      }
+
+      if (e.target.closest('.nav-trigger')) {
+        e.preventDefault();
+        const trigger = e.target.closest('.nav-trigger');
+        const page = trigger.dataset.page;
+        if (page) {
+          loadContent(page, null);
+        }
+      }
+    });
+
+    // Handle browser back/forward
+    window.addEventListener('popstate', () => {
+      const hash = window.location.hash.substring(1);
+      if (hash.includes('-')) {
+        const [page, sidebar] = hash.split('-');
+        loadContent(page, sidebar);
+      } else if (hash) {
+        loadContent(hash, null);
+      } else {
+        loadContent('home', null);
+      }
+    });
+
+    // Load initial content based on URL hash
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const initialHash = window.location.hash.substring(1);
+
+      if (initialHash.includes('-')) {
+        const [page, sidebar] = initialHash.split('-');
+        loadContent(page, sidebar);
+      }
+      else if (initialHash && pages[initialHash]) {
+        loadContent(initialHash, null);
+      }
+      else {
+        loadContent('home', null);
+      }
+
+    });
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function () {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile menu functionality
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileOverlay = document.getElementById('mobileOverlay');
+    const navLinks = document.querySelector('.nav-links');
+
+    function toggleMobileMenu() {
+      navLinks.classList.toggle('show');
+      mobileOverlay.classList.toggle('active');
+
+      if (navLinks.classList.contains('show')) {
+        mobileMenuBtn.innerHTML = '✕';
+      } else {
+        mobileMenuBtn.innerHTML = '☰';
+      }
+    }
+
+    mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    mobileOverlay.addEventListener('click', () => {
+      navLinks.classList.remove('show');
+      mobileOverlay.classList.remove('active');
+      mobileMenuBtn.innerHTML = '☰';
+      document.body.style.overflow = '';
+    });
+
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-link:not(.explore-btn), .nav-btn').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('show');
+        mobileOverlay.classList.remove('active');
+        mobileMenuBtn.innerHTML = '☰';
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Demo functionality
+    document.addEventListener('click', (e) => {
+      if (e.target.id === 'checkDemoBtn') {
+        const demoText = document.getElementById('demoText');
+        const demoResults = document.getElementById('demoResults');
+
+        if (demoText && demoResults) {
+          const text = demoText.value;
+          // Simple mock calculation
+          const words = text.split(/\s+/).length;
+          const mockScore = Math.min(35, Math.floor(words / 10) + 5);
+
+          demoResults.innerHTML = `
+            <h3>Results</h3>
+            <div class="demo-score">
+              <div class="score-circle">
+                <span class="score-number">${mockScore}%</span>
+              </div>
+            </div>
+            <div class="demo-sources">
+              <p>Found ${Math.floor(mockScore / 5)} potential sources</p>
+              <ul>
+                <li>Source 1: ${Math.floor(mockScore * 0.6)}% match</li>
+                <li>Source 2: ${Math.floor(mockScore * 0.3)}% match</li>
+              </ul>
+            </div>
+          `;
+        }
+      }
+    });
+
+    // Particle background
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for (let i = 0; i < 50; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 20 + 's';
+        particle.style.animationDuration = 15 + Math.random() * 10 + 's';
+        particle.style.width = 2 + Math.random() * 4 + 'px';
+        particle.style.height = particle.style.width;
+        container.appendChild(particle);
+      }
+    }
+    createParticles();
+
+    // Sidebar inside the navbar
+    const exploreBtn = document.querySelector(".explore-btn");
+    const exploreDropdown = document.querySelector(".explore-dropdown");
+
+    exploreBtn.addEventListener("click", function (e) {
+      e.preventDefault();
+      exploreDropdown.classList.toggle("active");
+    });
+
+    document.querySelectorAll(".explore-menu a").forEach(link => {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const sidebar = this.dataset.sidebar;
+
+        if (sidebar) {
+          loadContent(currentPage, sidebar);
+        }
+
+        document.querySelector(".explore-dropdown").classList.remove("active");
+      });
+    });
+
+    document.addEventListener("click", function (e) {
+
+      if (!e.target.closest(".explore-dropdown")) {
+        exploreDropdown.classList.remove("active");
+      }
+
+    });
+
+
+  </script>
+</body>
+
+<footer class="footer">
+
+  <div class="footer-container">
+
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <img src="{% static 'img/BRI Large Logo.jpg.jpeg' %}" alt="BRI Logo">
+        <span>BRI Plagiarism</span>
+      </div>
+
+      <p class="footer-description">
+        BRI Plagiarism is an AI-powered plagiarism detection platform developed by
+        Bambhari Research Institute to support academic integrity and originality
+        in research and professional writing.
+      </p>
+    </div>
+
+
+    <div class="footer-social">
+      <h4>Connect With Us</h4>
+
+      <div class="social-links">
+
+        <a href="https://www.linkedin.com/company/bambhari/posts/?feedView=all" aria-label="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:contactus@bambhari.com" aria-label="Email">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+        <a href="https://www.facebook.com/people/Bambhari/61561400994848/#" aria-label="Facebook">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+
+        <a href="https://www.instagram.com/bambhari_official/?hl=en" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+      </div>
+    </div>
+
+
+    <div class="footer-location">
+      <h4>Our Location</h4>
+
+      <div class="map-wrapper">
+        <iframe src="https://www.google.com/maps?q=World%20Trade%20Center%20Bangalore&output=embed" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="footer-bottom">
+    © 2026 Bambhari Research Institute. All rights reserved.
+  </div>
+
+</footer>
+
+</html>

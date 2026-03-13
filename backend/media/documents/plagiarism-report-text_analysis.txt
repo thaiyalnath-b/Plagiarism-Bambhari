@@ -1,0 +1,37 @@
+============================================================
+                 PLAGIARISM DETECTION REPORT
+============================================================
+
+Generated: 3/10/2026, 11:43:49 AM
+Document: Text Analysis
+
+PLAGIARISM SCORE: 48.10126582278481%
+VERDICT: Plagiarized
+
+BREAKDOWN:
+----------------------------------------
+Identical Matches: 5%
+Minor Changes: 14%
+Paraphrased: 29.10126582278481%
+Unique Content: 51.89873417721519%
+
+MATCHING SOURCES:
+----------------------------------------
+1. ஒப்பீட்டு முறை - சேபியன் முறை
+   Author: Unknown
+   Similarity: 48.10126582278481%
+   URL: https://metodologiasapiens.com/ta/metodos/metodo-comparativo/
+
+2. இரு நாடுகள் இரு மரபுகள் ஒப்புமை ஆய்வுத்தளம்
+   Author: Unknown
+   Similarity: 46.83544303797469%
+   URL: https://groups.google.com/g/vallamai/c/u3zeH2VbMYY
+
+3. Plagiarism checker - Google Play இல் உள்ள ஆப்ஸ்
+   Author: Unknown
+   Similarity: 41.02564102564102%
+   URL: https://play.google.com/store/apps/details?id=com.progaonline.antiplagiat&hl=ta
+
+============================================================
+              END OF REPORT
+============================================================

@@ -1,0 +1,42 @@
+============================================================
+                 PLAGIARISM DETECTION REPORT
+============================================================
+
+Generated: 3/10/2026, 11:21:29 AM
+Document: Advanced JAVA Programming-LAB_removed.pdf.pdf
+
+PLAGIARISM SCORE: 60%
+VERDICT: Plagiarized
+
+BREAKDOWN:
+----------------------------------------
+Identical Matches: 7%
+Minor Changes: 18%
+Paraphrased: 35%
+Unique Content: 40%
+
+MATCHING SOURCES:
+----------------------------------------
+1. A Simple Servlet
+   Author: Unknown
+   Similarity: 60%
+   URL: https://www.cs.fsu.edu/~jtbauer/cis3931/tutorial/servlets/overview/simple.html
+
+2. Setting Response Content Type and PrintWriter in Java Servlets
+   Author: Unknown
+   Similarity: 56.363636363636374%
+   URL: https://w3htmlschool.com/setting-response-content-type-and-printwriter-in-java-servlets/
+
+3. Too many requests · GitHub
+   Author: Unknown
+   Similarity: 46.34146341463414%
+   URL: https://github.com/javaee/servlet-spec/blob/master/src/main/java/javax/servlet/Servlet.java
+
+4. java - How to print out variable values in servlets on HTML pages? - Stack Overflow
+   Author: Unknown
+   Similarity: 38.18181818181819%
+   URL: https://stackoverflow.com/questions/59097672/how-to-print-out-variable-values-in-servlets-on-html-pages
+
+============================================================
+              END OF REPORT
+============================================================

@@ -1,0 +1,49 @@
+body{
+font-family:'Plus Jakarta Sans',sans-serif;
+background:#f5f7fb;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+text-align:center;
+padding-top:120px;
+}
+
+.subtitle{
+color:#666;
+margin-bottom:40px;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
+cursor:pointer;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card h2{
+margin-bottom:10px;
+}
+
+.card button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+background:#2563eb;
+color:white;
+border-radius:6px;
+cursor:pointer;
+}

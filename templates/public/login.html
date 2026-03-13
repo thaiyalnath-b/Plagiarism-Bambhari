@@ -1,0 +1,159 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | BRI PLAGIARISM</title>
+
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    padding: 20px;
+  }
+
+  /* remove heavy orb visibility */
+
+  .orb {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(140px);
+    opacity: .12;
+    z-index: 0;
+  }
+
+  .orb-1 {
+    background: #6366f1;
+    top: -150px;
+    left: -150px;
+  }
+
+  .orb-2 {
+    background: #ec4899;
+    bottom: -150px;
+    right: -150px;
+  }
+
+  /* login card */
+
+  .signup-container {
+    position: relative;
+    z-index: 2;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.05);
+  }
+
+  /* logo */
+
+  .logo {
+    margin-bottom: 18px;
+  }
+
+  .logo img {
+    width: 55px;
+  }
+
+  /* subtitle */
+
+  .subtitle {
+    font-size: 14px;
+    color: #6b7280;
+    margin-bottom: 26px;
+  }
+
+  /* button */
+
+  .signup-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #2563eb;
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #2563eb;
+    transition: all .15s ease;
+  }
+
+  .signup-btn:hover {
+    background: #1d4ed8;
+    border-color: #1d4ed8;
+  }
+
+  /* footer */
+
+  .footer {
+    margin-top: 22px;
+    font-size: 12px;
+    color: #6b7280;
+  }
+
+  /* responsive */
+
+  @media (max-width:480px) {
+
+    .signup-container {
+      padding: 30px 24px;
+    }
+
+    .logo img {
+      width: 48px;
+    }
+
+  }
+</style>
+
+<body>
+
+  <!-- Decorative Orbs -->
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="signup-container">
+
+    <div class="logo"><span class="brand-icon"><img src="{% static 'img/BRI Large Logo.jpg.jpeg' %}" alt=""
+          style="width:60px;"></span></div>
+    <p class="subtitle" style="color: #111;">Sign in to continue to your dashboard</p>
+
+    <a class="signup-btn" href="/accounts/google/login/">
+      Continue with Google
+    </a>
+
+    <p class="footer">
+      Secure authentication powered by Google
+    </p>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+from django.contrib import admin
+from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+
+from accounts import views as account_views
+from . import views
+
+
+urlpatterns = [
+
+    # ==============================
+    # ADMIN
+    # ==============================
+    path("admin/", admin.site.urls),
+
+    # ==============================
+    # PUBLIC LANDING PAGES
+    # ==============================
+    path("", views.public_home, name="public_home"),
+    path("home/", views.home, name="home"),
+    path("index/", views.index, name="index"),
+    path("features/", views.features_page, name="features"),
+    path("pricing/", views.pricing_page, name="pricing"),
+    path("about/", views.about_page, name="about"),
+    path("contact/", views.contact_page, name="contact"),
+
+    # ==============================
+    # AUTHENTICATION PAGES
+    # ==============================
+    path("login/", account_views.login_page, name="login"),
+    path("signup/", views.signup_page, name="signup"),
+    path("forgot-password/", views.forgot_password, name="forgot_password"),
+
+    # ==============================
+    # DJANGO ALLAUTH (Google OAuth)
+    # ==============================
+    path("accounts/", include("allauth.urls")),
+
+    # ==============================
+    # ACCOUNT MANAGEMENT
+    # ==============================
+    path("accounts/", include("accounts.urls")),
+    path("after-login/", account_views.after_login, name="after_login"),
+    
+    #  NEW: Username setup (replaces old profile page)
+    path("setup/username/", account_views.username_page, name="username_page"),
+    path("save-username/", account_views.save_username, name="save_username"),
+
+    # ==============================
+    # PLAGIARISM API
+    # ==============================
+    path("api/", include("plagiarism.urls")),
+
+    # ==============================
+    # PROTECTED ANALYSIS PAGES
+    # ==============================
+    path("dashboard/", views.unified_dashboard, name="unified_dashboard"),
+    path("analyze/", views.unified_dashboard, name="analyze"),
+]
+
+# ==============================
+# MEDIA FILES (DEV ONLY)
+# ==============================
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

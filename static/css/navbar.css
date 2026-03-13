@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.06);
+}
+
+.navbar.scrolled {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.nav-container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+}
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Calistoga', serif;
+}
+
+.brand-icon {
+    margin-right: 3px;
+    font-size: 20px;
+}
+
+.brand-text {
+    border-left: 2px solid rgb(216, 175, 175);
+    padding-left: 5px;
+}
+
+.brand-highlight {
+    color: rgb(145, 37, 37);
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    font-size: 16px;
+    font-family: sans-serif;
+    transition: color 0.25s ease;
+}
+
+.nav-link:hover {
+    color: rgb(204, 98, 98);
+}
+
+.nav-link.active {
+    color: rgb(183, 31, 31);
+}
+
+.explore {
+    display: none;
+}
+
+/* ================= BUTTON ================= */
+
+.nav-btn {
+    background: brown;
+    color: white;
+    padding: 9px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: background 0.25s ease;
+}
+
+.nav-btn:hover {
+    background: rgb(106, 24, 24);
+}
+
+.nav-btnn {
+    margin-right: -20px !important;
+    padding: 6px 16px;
+    border: 2px solid brown;
+    color: brown;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-btnn:hover {
+    background-color: brown;
+    color: white;
+}
+
+/* ================= RIGHT SECTION ================= */
+
+.nav-rights {
+    display: none;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn-mobile {
+    background: #2563eb;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* ================= MOBILE MENU OVERLAY ================= */
+
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    z-index: 900;
+}
+
+.mobile-menu-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* ================= EXPLORE DROPDOWN ================= */
+
+.explore-dropdown {
+    display: none;
+    position: relative;
+}
+
+.explore-menu {
+    background: #f9fafb;
+    border-radius: 6px;
+    margin-top: 8px;
+    padding: 6px 0;
+    display: none;
+    width: 100%;
+}
+
+.explore-menu a {
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #374151;
+    font-size: 14px;
+    display: block;
+}
+
+.explore-menu a:hover {
+    background: #f3f4f6;
+}
+
+.explore-dropdown.active .explore-menu {
+    display: block;
+}
+
+/* ================= MOBILE NAVIGATION ================= */
+
+@media(max-width:1000px) {
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 260px;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 50px 30px;
+        gap: 22px;
+        transition: right 0.3s ease;
+        box-shadow: -8px 0 25px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        z-index: 1000;
+    }
+
+    .nav-links.show {
+        right: 0;
+    }
+
+    .nav-rights {
+        display: flex;
+    }
+
+    .explore-dropdown {
+        display: block;
+    }
+
+
+}

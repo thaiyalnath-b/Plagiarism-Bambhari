@@ -1,0 +1,186 @@
+{% load static %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Login | BRI</title>
+
+  <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+  <style>
+    /* Reset */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    /* Background */
+
+    body {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f8fafc, #eef2ff);
+    }
+
+    /* Floating background shapes */
+
+    .orb {
+      position: fixed;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: .45;
+      z-index: 0;
+    }
+
+    .orb-1 {
+      background: #6366f1;
+      top: -120px;
+      left: -120px;
+    }
+
+    .orb-2 {
+      background: #ec4899;
+      bottom: -120px;
+      right: -120px;
+    }
+
+    /* Login Card */
+
+    .signup-container {
+      position: relative;
+      z-index: 2;
+
+      background: white;
+
+      width: 380px;
+
+      padding: 55px 45px;
+
+      border-radius: 14px;
+
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+
+      border: 1px solid #f1f5f9;
+
+      text-align: center;
+    }
+
+    /* Logo */
+
+    .brand-logo {
+      margin-bottom: 25px;
+    }
+
+    .brand-logo img {
+      width: 70px;
+    }
+
+    /* Heading */
+
+    .signup-container h2 {
+      font-size: 24px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 30px;
+    }
+
+    /* Google Button */
+
+    .signup-btn {
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+
+      width: 100%;
+
+      padding: 13px;
+
+      border-radius: 8px;
+
+      text-decoration: none;
+
+      font-size: 14px;
+
+      font-weight: 600;
+
+      background: #2563eb;
+
+      color: white;
+
+      transition: all .25s ease;
+
+    }
+
+    /* Hover */
+
+    .signup-btn:hover {
+
+      background: #1d4ed8;
+
+      transform: translateY(-2px);
+
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35);
+
+    }
+
+    /* Footer */
+
+    .footer {
+      margin-top: 25px;
+      font-size: 13px;
+      color: #9ca3af;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+
+  <div class="signup-container">
+
+    <div class="logo"><span class="brand-icon"><img src="{% static 'img/BRI Large Logo.jpg.jpeg' %}" alt=""
+          style="width:60px;"></span></div>
+
+    <h2>Login to BRI</h2>
+
+    <p class="subtitle">
+      Access your plagiarism analysis dashboard
+    </p>
+
+    <a class="signup-btn" href="/accounts/google/login/">
+      Continue with Google
+    </a>
+
+    <p class="footer">
+      Secure authentication powered by Google
+    </p>
+
+  </div>
+
+</body>
+
+</html>

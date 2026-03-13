@@ -1,0 +1,37 @@
+============================================================
+                 PLAGIARISM DETECTION REPORT
+============================================================
+
+Generated: 3/9/2026, 4:42:34 PM
+Document: Thaiyalnath__compressed.pdf
+
+PLAGIARISM SCORE: 47.15%
+VERDICT: Plagiarized
+
+BREAKDOWN:
+----------------------------------------
+Identical Matches: 5%
+Minor Changes: 14%
+Paraphrased: 28.150259067357517%
+Unique Content: 52.84974093264248%
+
+MATCHING SOURCES:
+----------------------------------------
+1. 7 Front End Web Developer Resume Examples & Templates for 2026 [Edit & Download] | Himalayas
+   Author: Unknown
+   Similarity: 47.15025906735752%
+   URL: https://himalayas.app/resumes/front-end-web-developer
+
+2. User Interface Designer Job Description (Updated 2023 With Examples) | KAPLAN
+   Author: Unknown
+   Similarity: 46.391752577319586%
+   URL: https://jobs.community.kaplan.com/career/user-interface-designer/job-descriptions
+
+3. Attention Required! | Cloudflare
+   Author: Unknown
+   Similarity: 41.96891191709845%
+   URL: https://www.tealhq.com/resume-examples/front-end-developer
+
+============================================================
+              END OF REPORT
+============================================================
